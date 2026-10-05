@@ -1,10 +1,10 @@
-/* Re:U BLOG — Pages CMS posts in the public shionweb2415-coder/ReU repository.
+/* Re:U BLOG — Pages CMS posts in the public reu-salon1999/ReU repository.
  * The Pages CMS repository is separate from the Re:U website repository.
  * Only posts dated 2026 or later are displayed, to exclude the 2020 demo posts.
  * No credentials or private tokens are used. */
 (() => {
   'use strict';
-  const OWNER = 'shionweb2415-coder';
+  const OWNER = 'reu-salon1999';
   const REPO = 'ReU';
   const BRANCH = 'main';
   const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/_posts?ref=${BRANCH}`;
