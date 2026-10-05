@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規のお客様 MENU｜Re:U</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Serif JP", serif;
+      background: #f8f8f6;
+      color: #252525;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5df;
+    }
+
+    .header-inner {
+      max-width: 1040px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand,
+    .back {
+      color: #252525;
+      text-decoration: none;
+    }
+
+    .brand {
+      font-size: 22px;
+      letter-spacing: .08em;
+    }
+
+    .back {
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 920px;
+      margin: auto;
+      padding: 80px 24px 110px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .title small {
+      letter-spacing: .18em;
+      color: #888;
+    }
+
+    .title h1 {
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: .08em;
+      margin: 8px 0 0;
+    }
+
+    .notice {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 44px;
+      color: #666;
+      font-size: 14px;
+    }
+
+
+    /* メニュー一覧 */
+
+    .menu-list {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  background: #ffffff;
+  border: 1px solid #e3ddd2;
+}
+
+
+    /* メニューカード */
+
+    .popular-menu {
+      position: relative;
+      margin-bottom: 22px;
+      padding: 28px 24px 24px;
+      background: #fffdf8;
+      border: 1px solid #d8c39a;
+    }
+
+    .popular-badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 14px;
+      background: #b89b63;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+
+    .menu-title {
+      margin: 0 0 12px;
+      color: #252525;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .menu-description {
+      margin: 0 0 18px;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .menu-price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .old-price {
+      color: #888;
+      text-decoration: line-through;
+      font-size: 15px;
+    }
+
+    .arrow {
+      color: #aaa;
+    }
+
+    .new-price {
+      color: #9b7b3d;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+
+    /* 戻るボタン */
+
+    .nav {
+      text-align: center;
+      margin-top: 42px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 26px;
+      border: 1px solid #333;
+      text-decoration: none;
+      color: #252525;
+      margin: 4px;
+    }
+
+    .button:hover {
+      background: #333;
+      color: #fff;
+    }
+
+
+    /* スマホ */
+
+    @media (max-width: 600px) {
+
+      main {
+        padding: 60px 18px 80px;
+      }
+
+      .popular-menu {
+        padding: 22px 18px 20px;
+      }
+
+      .menu-title {
+        font-size: 16px;
+      }
+
+      .new-price {
+        font-size: 21px;
+      }
+
+    }
+
+
+    .header-inner .brand {
+      position: relative;
+      left: min(0px, calc((1040px - 100vw) / 2));
+    }
+
+
+    /* TOPページと同じ予約エリア */
+
+    .cta {
+      padding: 100px 24px;
+      background: #2d2d2b;
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 12px;
+      font-size: 27px;
+      font-weight: 500;
+    }
+
+    .cta p {
+      margin: 0;
+      color: #ddd;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 14px 34px;
+      background: #fff;
+      color: #252525;
+      text-decoration: none;
+      border: 1px solid #fff;
+    }
+
+    @media (max-width: 800px) {
+
+      .cta {
+        padding: 76px 18px;
+      }
+
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid #e5e5df;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="header-inner">
+
+    <a class="brand" href="index.html">
+      Re:U
+    </a>
+
+    <a class="back" href="menu.html">
+      ← MENUへ戻る
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+  <div class="title">
+
+    <small>
+      FIRST VISIT
+    </small>
+
+    <h1>
+      新規のお客様 MENU
+    </h1>
+
+  </div>
+
+
+  <p class="notice">
+    初めてRe:Uをご利用になるお客様向けのメニューページです。
+  </p>
+
+
+
+  <div class="menu-list">
+
+
+    <!-- 人気No.1 -->
+
+    <div class="popular-menu">
+
+      <div class="popular-badge">
+        人気 No.1
+      </div>
+
+      <p class="menu-title">
+        レプトンガス吸入 × ネオヒーラー［全身］ 60分
+      </p>
+
+      <p class="menu-description">
+        高濃度水素を吸入しながら、究極のオーダーメイドなエイジングケア！
+      </p>
+
+      <div class="menu-price">
+
+        <span class="old-price">
+          ¥15,800
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+        <span class="new-price">
+          ¥12,800
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- レプトンガス吸入 × ネオヒーラー -->
+
+    <div class="popular-menu">
+
+      <p class="menu-title">
+        レプトンガス吸入×ネオヒーラー[フットorヘッド]　30分
+      </p>
+
+      <p class="menu-description">
+        高濃度水素を吸入しながら疲れやむくみを一瞬で取り除く！
+      </p>
+
+      <div class="menu-price">
+
+        <span class="old-price">
+          ¥8,800
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+        <span class="new-price">
+          ¥6,600
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- レプトンガス30分 -->
+
+    <div class="popular-menu">
+
+      <p class="menu-title">
+        高濃度水素吸入（レプトンガス）30分
+      </p>
+
+      <p class="menu-description">
+        基礎体温＆免疫力up/自律神経ケア/疲労回復/睡眠の質改善に
+      </p>
+
+      <div class="menu-price">
+
+        <span class="old-price">
+          ¥4,980
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+        <span class="new-price">
+          ¥3,200
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- レプトンガス60分 -->
+
+    <div class="popular-menu">
+
+      <p class="menu-title">
+        高濃度水素吸入（レプトンガス）60分
+      </p>
+
+      <p class="menu-description">
+        基礎体温＆免疫力up/自律神経ケア/疲労回復/睡眠の質改善に
+      </p>
+
+      <div class="menu-price">
+
+        <span class="old-price">
+          ¥8,400
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+        <span class="new-price">
+          ¥4,980
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- レプトンガス90分 -->
+
+    <div class="popular-menu">
+
+      <p class="menu-title">
+        高濃度水素吸入（レプトンガス）90分
+      </p>
+
+      <p class="menu-description">
+        悪玉活性酸素を徹底的にデトックス！
+      </p>
+
+      <div class="menu-price">
+
+        <span class="old-price">
+          ¥10,800
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+        <span class="new-price">
+          ¥6,480
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+<!-- ネオヒーラー -->
+
+<div class="popular-menu" style="display:none;">
+
+  <p class="menu-title">
+    ネオヒーラー
+  </p>
+
+  <p class="menu-description">
+    身体の深部にアプローチし、細胞レベルで整える施術。
+  </p>
+
+  <div class="menu-price">
+
+    <span class="new-price">
+      ¥4,950〜
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- ピラティス -->
+
+<div class="popular-menu" style="display:none;">
+
+  <p class="menu-title">
+    ピラティスコンディショニング
+  </p>
+
+  <p class="menu-description">
+    身体の歪みを整え、正しい姿勢と動きを取り戻す。
+  </p>
+
+  <div class="menu-price">
+
+    <span class="new-price">
+      ¥8,800〜
+    </span>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+
+
+  <div class="nav">
+
+    <a class="button" href="menu.html">
+      メニュー選択へ戻る
+    </a>
+
+  </div>
+
+
+</main>
+
+
+
+<section class="cta" id="reservation">
+
+  <h2>
+    ご予約はこちら
+  </h2>
+
+  <p>
+    公式LINEから簡単にご予約いただけます
+  </p>
+
+  <a href="https://airrsv.net/reu/calendar">
+    予約する
+  </a>
+
+</section>
+
+
+
+<footer>
+  © Re:U Reverse Aging Salon
+</footer>
+
+
+</body>
+</html>
