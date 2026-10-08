@@ -765,8 +765,9 @@
    specs の各 "" の中に、
    商品番号・商品名・内容量・賞味期限・保存方法・原材料を入れてください。
 
-※ スピルリナとF100だけ、variantsの中に通常サイズと
-   お試しサイズの2種類を入れています。
+※ スピルリナとF100は、通常サイズ・お試しサイズそれぞれの
+   variant内にspecsがあります。
+   サイズを変更すると、価格と商品詳細表が一緒に切り替わります。
 =========================================================
 */
 
@@ -782,24 +783,34 @@ const products = [
         label: "通常サイズ（顆粒・90袋入）",
         size: "顆粒・90袋入",
         price: 5832,
-        stripeUrl: ""
+        stripeUrl: "",
+
+        specs: {
+          number: "0000252",
+          name: "ハイ・ゲンキ スピルリナ（顆粒）",
+          amount: "315g（3.5g×90袋）　1日3袋で30日分、1日6袋で15日分",
+          expiry: "製造から14カ月",
+          storage: "直射日光・湿度の高い所を避け、常温で保存",
+          ingredients: "玄米胚芽・表皮（国産）、大豆（北海道産）、玄米（北海道産）、スピルリナ、麹菌"
+        }
       },
+
       {
         label: "お試しサイズ（顆粒・30袋入）",
         size: "顆粒・30袋入",
         price: 2160,
-        stripeUrl: ""
-      }
-    ],
+        stripeUrl: "",
 
-    specs: {
-      number: "0000252",
-      name: "ハイ・ゲンキ スピルリナ（顆粒・90袋入）",
-      amount: "315g（3.5g×90袋）　1日3袋で30日分、1日6袋で15日分",
-      expiry: "製造から14カ月",
-      storage: "直射日光・湿度の高い所を避け、常温で保存",
-      ingredients: "玄米胚芽・表皮（国産）、大豆（北海道産）、玄米（北海道産）、スピルリナ、麹菌"
-    }
+        specs: {
+          number: "",
+          name: "ハイ・ゲンキ スピルリナ お試しサイズ（顆粒）",
+          amount: "",
+          expiry: "",
+          storage: "",
+          ingredients: ""
+        }
+      }
+    ]
   },
 
 
@@ -813,24 +824,34 @@ const products = [
         label: "通常サイズ（顆粒・90袋入）",
         size: "顆粒・90袋入",
         price: 5832,
-        stripeUrl: ""
+        stripeUrl: "",
+
+        specs: {
+          number: "0000206",
+          name: "玄米酵素F100（顆粒・90袋入）",
+          amount: "",
+          expiry: "",
+          storage: "",
+          ingredients: ""
+        }
       },
+
       {
         label: "お試しサイズ（顆粒・30袋入）",
         size: "顆粒・30袋入",
         price: 2160,
-        stripeUrl: ""
-      }
-    ],
+        stripeUrl: "",
 
-    specs: {
-      number: "",
-      name: "",
-      amount: "",
-      expiry: "",
-      storage: "",
-      ingredients: ""
-    }
+        specs: {
+          number: "",
+          name: "玄米酵素F100 お試しサイズ（顆粒・30袋入）",
+          amount: "",
+          expiry: "",
+          storage: "",
+          ingredients: ""
+        }
+      }
+    ]
   },
 
 
@@ -1181,26 +1202,7 @@ function openProduct(productId) {
   }
 
 
-  /* 商品詳細表 */
-  document.getElementById("specNumber").textContent =
-    product.specs.number;
-
-  document.getElementById("specName").textContent =
-    product.specs.name;
-
-  document.getElementById("specAmount").textContent =
-    product.specs.amount;
-
-  document.getElementById("specExpiry").textContent =
-    product.specs.expiry;
-
-  document.getElementById("specStorage").textContent =
-    product.specs.storage;
-
-  document.getElementById("specIngredients").textContent =
-    product.specs.ingredients;
-
-
+  /* 価格・サイズ・商品詳細表を初期表示 */
   updateDetailPrice();
 
   window.scrollTo({
@@ -1235,6 +1237,7 @@ function updateDetailPrice() {
 
   let price;
   let size;
+  let specs;
 
   if (currentProduct.variants) {
 
@@ -1243,11 +1246,13 @@ function updateDetailPrice() {
 
     price = variant.price;
     size = variant.size;
+    specs = variant.specs || {};
 
   } else {
 
     price = currentProduct.price;
     size = currentProduct.size;
+    specs = currentProduct.specs || {};
 
   }
 
@@ -1256,6 +1261,25 @@ function updateDetailPrice() {
 
   document.getElementById("detailSize").textContent =
     size;
+
+  /* 商品詳細表もサイズに合わせて切り替える */
+  document.getElementById("specNumber").textContent =
+    specs.number || "";
+
+  document.getElementById("specName").textContent =
+    specs.name || "";
+
+  document.getElementById("specAmount").textContent =
+    specs.amount || "";
+
+  document.getElementById("specExpiry").textContent =
+    specs.expiry || "";
+
+  document.getElementById("specStorage").textContent =
+    specs.storage || "";
+
+  document.getElementById("specIngredients").textContent =
+    specs.ingredients || "";
 
 }
 
